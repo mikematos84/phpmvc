@@ -1,2 +1,3 @@
 # phpmvc
-PHP MVC (Model, View, Controller) Framework
+
+MVC Framekwork built in PHP
