@@ -1,0 +1,22 @@
+{
+    "author": {
+        "name": "Mike Matos",
+        "email": "mikematos84@gmail.com"
+    },
+
+    "database":{
+        "driver": "mysqli",
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "negosim"
+    }, 
+
+    "required":[
+        "App",
+        "Controller",
+        "Model",
+        "View",
+        "Sql"
+    ]
+}
