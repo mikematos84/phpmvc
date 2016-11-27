@@ -17,6 +17,7 @@
         "Controller",
         "Model",
         "View",
-        "Sql"
+        "Sql",
+        "Service"
     ]
 }

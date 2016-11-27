@@ -13,6 +13,7 @@ define("APP_ROOT", ROOT . "/app");
 define("VIEWS", APP_ROOT . "/views");
 define("CONTROLLERS", APP_ROOT . "/controllers");
 define("MODELS", APP_ROOT . "/models");
+define("SERVICES", APP_ROOT . "/services");
 
 //load configuration file
 $config = null;
