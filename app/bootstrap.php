@@ -28,5 +28,9 @@ foreach($config->required as $core_file){
     require_once APP_ROOT . DS . "core" . DS . $core_file . ".php";
 }
 
+<<<<<<< HEAD:app/Bootstrap.php
 /* Start app */
 $app = new App();
+=======
+$app = new App();
+>>>>>>> cd74ece0d2ca20f42380b43accf83996ccfd98c6:app/bootstrap.php
