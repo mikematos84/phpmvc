@@ -8,9 +8,8 @@ class Controller{
 
     public function __construct(){
         //construct class
-        $target = str_replace("Controller", "", get_class($this));
-        $this->loadModel($target);
-        $this->loadService($target);
+        $name = str_replace("Controller", "", get_class($this));
+        $this->loadModel($name);
     }
 
     public function loadModel($file){
@@ -21,17 +20,6 @@ class Controller{
         }else{
             require_once APP_ROOT . "/core/Model.php";
             $this->model = new Model();
-        }
-    }
-
-    public function loadService($file){
-        if(file_exists(SERVICES . "/{$file}.php")){
-            require_once SERVICES . "/{$file}.php";
-            $service = ucfirst($file) . "Service";
-            $this->service = new $service();
-        }else{
-            require_once APP_ROOT . "/core/Service.php";
-            $this->service = new Service();
         }
     }
 

@@ -9,7 +9,7 @@
         <script src="<?php echo SITE_URL; ?>/js/vendor/jquery-1.11.2.min.js"></script>
         <script src="<?php echo SITE_URL; ?>/js/plugins.js"></script>
         <script src="<?php echo SITE_URL; ?>/js/main.js"></script>
-
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
