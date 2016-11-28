@@ -13,10 +13,10 @@
     }, 
 
     "required":[
-        "App",
-        "Controller",
-        "Model",
-        "View",
-        "Sql"
+        "app",
+        "controller",
+        "model",
+        "view",
+        "sql"
     ]
 }
