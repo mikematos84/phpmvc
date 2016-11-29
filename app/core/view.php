@@ -2,8 +2,9 @@
 
 class View{
 
-    public $template = NULL;
-    
+    public $template = null;
+    private $blade = null;
+
     public function __construct(){
         //construct class
     }

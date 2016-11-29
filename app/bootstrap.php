@@ -24,7 +24,7 @@ if(file_exists(APP_ROOT . "/config/app.json")){
 }
 
 /* Load required core files */
-foreach($config->required as $core_file){
+foreach($config->require as $core_file){
     require_once APP_ROOT . DS . "core" . DS . $core_file . ".php";
 }
 
