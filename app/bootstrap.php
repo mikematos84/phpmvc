@@ -17,6 +17,9 @@ define("VIEWS", APP_ROOT . "/views");
 define("CONTROLLERS", APP_ROOT . "/controllers");
 define("MODELS", APP_ROOT . "/models");
 
+/* Compose Autoload */
+require_once APP_ROOT . "/vendor/autoload.php";
+
 /* Load configuration file */
 $config = null;
 if(file_exists(APP_ROOT . "/config/app.json")){

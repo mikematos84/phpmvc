@@ -3,6 +3,9 @@
 <div class="main wrapper clearfix">
 
     <article>
+        {% for user in users %}
+            {{user.name}}
+        {% endfor %}
         <header>
             <h1>article section h1</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
