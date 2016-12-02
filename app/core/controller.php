@@ -25,7 +25,14 @@ class Controller{
 
     public function loadView($file){
         require_once APP_ROOT . "/core/View.php";
-        $this->view = new View();
-        $this->view->load($file);
+        $this->view = new View($file);
+        
+        $data = ["users" => [
+            ["name" => "mike"],
+            ["name" => "billy"],
+            ["name" => "tom"],
+            ["name" => "bryan"]
+        ]];
+        $this->view->render($data);
     }
 }

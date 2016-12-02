@@ -2,29 +2,54 @@
 
 class Sql{
 
+    /*
+    * ADOdb connection
+    * @var object
+    */
     public $conn = null;
 
+
+    /*
+    * Triggers connection
+    */
     public function __construct(){
+        $this->connect();
+    }
+
+
+    /*
+    * Initiates database connection using data from app.json config file
+    */
+    private function connect(){
         global $config;
-        require_once APP_ROOT . "/libraries/adodb5/adodb.inc.php";
         $this->conn = NewADOConnection($config->database->driver);
         $this->conn->Connect($config->database->host,$config->database->user,$config->database->password,$config->database->database);
         $this->conn->SetFetchMode(ADODB_FETCH_BOTH);
     }
 
-    public function select($sql, $values = []){
-        $stmt = $this->conn->Prepare($sql);
-        $row = $this->conn->GetRow($stmt, $values);
-        return $row;
+
+    /*
+    * Re-establish connection 
+    */
+    public function __wakeup(){
+        $this->connect();
     }
 
-    public function selectAll($sql, $values = []){
-        $stmt = $this->conn->Prepare($sql);
-        $rows =  $this->conn->GetAll($stmt, $values);
-        return $rows;
+
+    /*
+    * Commit pending data 
+    */
+    public function __sleep(){
+        return array($config->database->host,$config->database->user,$config->database->password,$config->database->database);
     }
 
+
+    /*
+    * Close database connection on destruction of class
+    */
     public function __destruct(){
         $this->conn->Close();
     }
+
+
 }

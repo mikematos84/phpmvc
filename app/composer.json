@@ -1,5 +1,7 @@
 {
     "require": {
-        "twig/twig": "~1.0"
+        "twig/twig": "~1.0",
+        "adodb/adodb-php": "^5.20",
+        "intervention/image": "^2.3"
     }
 }
