@@ -2,7 +2,7 @@
 
 class View{
 
-    /*
+    /**
     * Holds unmodified template content
     * @var string
     */
@@ -11,22 +11,23 @@ class View{
     # @var string
     public $template = null;
     
-    /*
+    /**
     * filename of the view being requested from the "views" directory 
     * @var string
     */
     public $file = null;
 
-    /*
+    /**
     * Holds modified template content
     * @var string
     */
     private $output = null;
     
 
-    /*
+    /**
     * Sets file and loads the template
-    * @param string
+    * @param string $file
+    * @return void
     */
     public function __construct($file){
         $this->file = $file;
@@ -34,8 +35,9 @@ class View{
     }
 
 
-    /*
+    /**
     * Loads the requested template
+    * @return void
     */
     public function load(){
          if(file_exists(VIEWS . "/{$this->file}.php")){
@@ -47,9 +49,10 @@ class View{
     }
 
 
-    /*
+    /**
     * Uses Twig to parse and modify the template; Renders output
     * @param array
+    * @return void
     */
     public function render($data = []){
         if(isset($this->template)){
