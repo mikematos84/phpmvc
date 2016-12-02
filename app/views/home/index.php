@@ -1,6 +1,6 @@
-<?php require_once VIEWS . "/header.php"; ?>
+<?php require_once VIEWS . '/header.php'; ?>
 
-<div class="main wrapper clearfix">
+<div class='main wrapper clearfix'>
 
     <article>
         {% for user in users %}
@@ -31,4 +31,4 @@
 
 </div> <!-- #main -->
 
-<?php require_once VIEWS . "/footer.php"; ?>
+<?php require_once VIEWS . '/footer.php'; ?>

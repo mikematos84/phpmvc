@@ -23,7 +23,7 @@ class View{
     public $template = null;
     
     /**
-    * filename of the view being requested from the "views" directory 
+    * filename of the view being requested from the 'views' directory 
     * @var string
     */
     public $file = null;
@@ -51,9 +51,9 @@ class View{
     * @return void
     */
     public function load(){
-         if(file_exists(VIEWS . "/{$this->file}.php")){
+         if(file_exists(VIEWS . '/' . $this->file . '.php')){
             ob_start();
-            require_once VIEWS . "/{$this->file}.php";
+            require_once VIEWS . '/' . $this->file . '.php';
             $this->template = ob_get_clean();
             ob_end_clean();
         }

@@ -3,8 +3,8 @@
 class App{
 
     public $url = null;
-    public $controller = "home";
-    public $action = "index";
+    public $controller = 'home';
+    public $action = 'index';
     public $params = [];
     
     public function __construct(){
@@ -31,12 +31,12 @@ class App{
         $this->params = $this->url ? array_values($this->url) : [];
 
         //load controller
-        if(file_exists(CONTROLLERS . "/{$this->controller}.php")){
-            require_once CONTROLLERS . "/{$this->controller}.php";
-            $class = ucfirst($this->controller) . "Controller";
+        if(file_exists(CONTROLLERS . '/' . $this->controller . '.php')){
+            require_once CONTROLLERS . '/' . $this->controller . '.php';
+            $class = ucfirst($this->controller) . 'Controller';
             $controller = new $class();
         }else{
-            require_once CONTROLLERS . "/error.php";
+            require_once CONTROLLERS . '/error.php';
             $controller = new ErrorController();
         }
 
@@ -46,8 +46,8 @@ class App{
     }
 
     public function parseURL(){
-        if(isset($_GET["url"])){
-            return $url = explode("/", filter_var(rtrim($_GET["url"], "/"), FILTER_SANITIZE_URL));
+        if(isset($_GET['url'])){
+            return $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
         }
     }
 
