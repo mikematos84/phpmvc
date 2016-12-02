@@ -16,15 +16,15 @@ class App{
         $this->url = $this->parseURL();
 
         //if has requested view
-        if(isset($url[0])){
+        if(isset($this->url[0])){
             $this->controller = $this->url[0];
-            unset($url[0]);
+            unset($this->url[0]);
         }
 
         //if has requested view action
-        if(isset($url[1])){
+        if(isset($this->url[1])){
             $this->action = $this->url[1];
-            unset($url[0]);
+            unset($this->url[1]);
         }
 
         //save modifying params

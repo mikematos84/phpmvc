@@ -1,17 +1,47 @@
 <?php
 
+/**
+* Controller is the base controller class that handles requests for the framework. 
+* It loads requested views, models, and injects the data from those models into the 
+* view to be rendered.  
+*/ 
+
 class Controller{
 
-    public $service = NULL;
+    /**
+    * Holds model class
+    * @var object $model
+    */
     public $model = NULL;
-    public $view = NULL;
 
+
+    /**
+    * Holds view class
+    * @var object $view
+    */
+    public $view = NULL;
+    private $name = NULL;
+
+
+    /**
+    * Triggers loading of model
+    * @return void
+    */
     public function __construct(){
-        //construct class
-        $name = str_replace("Controller", "", get_class($this));
-        $this->loadModel($name);
+        $this->name = str_replace("Controller", "", get_class($this));
     }
 
+
+    public function load($file){
+        $this->loadModel($this->name);
+        $this->loadView($file);
+        return $this->view;
+    }
+
+    /**
+    * Instantiates Model Class
+    * @return void
+    */
     public function loadModel($file){
         if(file_exists(MODELS . "/{$file}.php")){
             require_once MODELS . "/{$file}.php";
@@ -23,16 +53,13 @@ class Controller{
         }
     }
 
+
+    /**
+    * Instantiates View Class
+    * @return void
+    */
     public function loadView($file){
         require_once APP_ROOT . "/core/View.php";
         $this->view = new View($file);
-        
-        $data = ["users" => [
-            ["name" => "mike"],
-            ["name" => "billy"],
-            ["name" => "tom"],
-            ["name" => "bryan"]
-        ]];
-        $this->view->render($data);
     }
 }

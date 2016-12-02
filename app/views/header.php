@@ -28,8 +28,8 @@
                 <nav>
                     <ul>
                         <li><a href="<?php echo SITE_URL; ?>/#">nav ul li a</a></li>
-                        <li><a href="<?php echo SITE_URL; ?>/#">nav ul li a</a></li>
-                        <li><a href="<?php echo SITE_URL; ?>/#">nav ul li a</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/nav-3">nav ul li a</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/nav-2">nav ul li a</a></li>
                     </ul>
                 </nav>
             </header>

@@ -1,10 +1,8 @@
 <?php
 
 /**
-* This class uses the ADOdb Abstract layer in order to connect to a database. 
-* I chose to go with this class due to its robust functionality and ability 
-* to easily adapt to a wide array of database styles and not jut be solely dependent
-* on MySQL
+* Class enabled app framework to connect to a database through the use of 
+* the ADOdb abstraction layer
 */ 
 
 class Sql{

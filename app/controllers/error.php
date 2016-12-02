@@ -18,7 +18,10 @@ class ErrorController extends Controller{
     }
 
     public function error404($params){
-        echo "This is a 404 error";
+        $this->load('error/index')->render([
+            "statusCode" => $this->statusCode,
+            "message" => "Oops! Looks like you were searching for a page that is no longer around. We're sorry but how about we make it up to you. Here is a GIF of a happy cat."
+        ]);
     }
 
 }

@@ -7,8 +7,14 @@ class HomeController extends Controller{
     }
 
     public function index($params = []){
-        $this->loadView("home/index");
-        $this->view->render();
+        $this->load("home/index")->render([
+            "users" => [
+                ["name" => "mike"],
+                ["name" => "billy"],
+                ["name" => "tom"],
+                ["name" => "bryan"]
+            ]
+        ]);
     }
 
 }
