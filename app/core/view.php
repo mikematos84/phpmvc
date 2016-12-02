@@ -1,5 +1,16 @@
 <?php 
 
+/**
+* View contains base functionality allowing a view to be rendered. View loads 
+* and makes use of the Twig templating engine. This allows more flexibility
+* for designers to quick create pages without having to have knowledge of 
+* coding principals. 
+* 
+* For more information and documentation on Twig visit: http://twig.sensiolabs.org/
+* 
+* @package View;
+*/
+
 class View{
 
     /**
@@ -59,7 +70,9 @@ class View{
             $loader = new Twig_Loader_Array(array(
                 $this->output => $this->template,
             ));
-            $twig = new Twig_Environment($loader);
+            $twig = new Twig_Environment($loader, array(
+                'cache' => APP_ROOT . '/cache'
+            ));
         }
         echo $twig->render($this->output, $data);
     }
